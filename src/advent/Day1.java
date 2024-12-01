@@ -1,9 +1,13 @@
 package advent;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Day1 {
     ArrayList<Integer> firstList = new ArrayList<>();
@@ -11,15 +15,12 @@ public class Day1 {
 
 
     public Day1() {
-        BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("src/advent/locations"));
-            String line = reader.readLine();
-            while (line != null) {
-                String[] parts = line.split(" +");
+            List<String> file = Files.readAllLines(Paths.get("src/advent/locations"));
+            for (String s : file) {
+                String [] parts=s.split(" +");
                 firstList.add(Integer.parseInt(parts[0]));
                 secondList.add(Integer.parseInt(parts[1]));
-                line = reader.readLine();
             }
             firstList.sort(Integer::compareTo);
             secondList.sort(Integer::compareTo);
