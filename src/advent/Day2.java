@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Day2 {
     List<String> file = Files.readAllLines(Paths.get("src/advent/reactorData"));
@@ -44,16 +43,13 @@ public class Day2 {
     }
 
     public int numberOfSafe() {
-        AtomicInteger result = new AtomicInteger();
-        file.forEach(line ->
-                {
-                    if (isSafe(line)) {
-                        result.getAndIncrement();
-                    }
-                }
-
-        );
-        return result.get();
+        int count = 0;
+        for (String line : file) {
+            if (isSafe(line)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args) throws IOException {
