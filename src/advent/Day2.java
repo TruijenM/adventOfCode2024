@@ -13,7 +13,7 @@ public class Day2 {
 
 
     public Day2() throws IOException {
-        file = Files.readAllLines(Paths.get("src/advent/reactorData"));
+        file = Files.readAllLines(Paths.get("src/advent/resources/reactorData"));
     }
 
     public boolean isSafe(List<Integer> numbers) {

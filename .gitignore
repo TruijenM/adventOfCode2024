@@ -27,5 +27,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/src/advent/locations
-/src/advent/reactorData
+/src/advent/resources/locations
+/src/advent/resources/reactorData
+/src/advent/resources/corruptedComputerInput

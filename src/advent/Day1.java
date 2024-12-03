@@ -13,7 +13,7 @@ public class Day1 {
 
     public Day1() {
         try {
-            List<String> file = Files.readAllLines(Paths.get("src/advent/locations"));
+            List<String> file = Files.readAllLines(Paths.get("src/advent/resources/locations"));
             for (String s : file) {
                 String [] parts=s.split(" +");
                 firstList.add(Integer.parseInt(parts[0]));
@@ -38,11 +38,11 @@ public class Day1 {
     public Integer calculateSimilarity() {
         int result = 0;
         for (int firstListInt : firstList) {
-            int numberOfOccurances = (int) secondList
+            int numberOfOccurrences = (int) secondList
                     .stream()
                     .filter(integer -> integer == firstListInt)
                     .count();
-            result += numberOfOccurances * firstListInt;
+            result += numberOfOccurrences * firstListInt;
         }
         return result;
     }
