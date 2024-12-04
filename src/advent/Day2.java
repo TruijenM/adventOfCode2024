@@ -30,15 +30,15 @@ public class Day2 {
     }
 
 
-    boolean checkVariants(List<Integer> nrs) {
-        for (int i = 0; i < nrs.size(); i++) {
-            List<Integer> variant = new ArrayList<>(nrs);
+    boolean checkVariants(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size(); i++) {
+            List<Integer> variant = new ArrayList<>(numbers);
             variant.remove(i);
             if (isSafe(variant)) {
                 return true;
             }
         }
-        return isSafe(nrs);
+        return isSafe(numbers);
     }
     void checkDifference(int num1, int num2) {
         int tempResult = Math.abs(num1 - num2);
