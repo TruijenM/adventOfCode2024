@@ -19,7 +19,7 @@ public class Day4 {
         }
     }
 
-    int countForXmas() {
+    void countForXmas() {
 
         int counter = 0;
         for (int i = 0; i < arrayOfChars.size(); i++) {
@@ -54,13 +54,28 @@ public class Day4 {
 
         }
         System.out.println(counter);
-        return counter;
+    }
+
+    void xShapedMasCounter() {
+        int counter = 0;
+        for (int i = 0; i < arrayOfChars.size(); i++) {
+            for (int j = 0; j < arrayOfChars.get(i).length; j++) {
+                if (arrayOfChars.get(i)[j] == 'A' && j > 0 && i > 0 && i + 1 < arrayOfChars.size() && j + 1 < arrayOfChars.get(i).length) {
+                    if ((arrayOfChars.get(i + 1)[j + 1] == 'M' && arrayOfChars.get(i - 1)[j - 1] == 'S') || (arrayOfChars.get(i + 1)[j + 1] == 'S' && arrayOfChars.get(i - 1)[j - 1] == 'M'))
+                        if ((arrayOfChars.get(i - 1)[j + 1] == 'M' && arrayOfChars.get(i + 1)[j - 1] == 'S') || (arrayOfChars.get(i - 1)[j + 1] == 'S' && arrayOfChars.get(i + 1)[j - 1] == 'M')) {
+                            counter++;
+                        }
+                }
+            }
+        }
+        System.out.println(counter);
     }
 
 
     public static void main(String[] args) throws IOException {
         var d = new Day4();
-        System.out.println(d.countForXmas());
+        d.countForXmas();
+        d.xShapedMasCounter();
     }
 
 }
