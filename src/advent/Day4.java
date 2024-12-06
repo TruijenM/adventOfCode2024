@@ -19,7 +19,7 @@ public class Day4 {
         }
     }
 
-    void displayGrid() {
+    int countForXmas() {
 
         int counter = 0;
         for (int i = 0; i < arrayOfChars.size(); i++) {
@@ -54,12 +54,13 @@ public class Day4 {
 
         }
         System.out.println(counter);
+        return counter;
     }
 
 
     public static void main(String[] args) throws IOException {
         var d = new Day4();
-        d.displayGrid();
+        System.out.println(d.countForXmas());
     }
 
 }
