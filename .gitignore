@@ -30,3 +30,4 @@ bin/
 /src/advent/resources/locations
 /src/advent/resources/reactorData
 /src/advent/resources/corruptedComputerInput
+/src/advent/resources/wordSearchInput
